@@ -1,35 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { Rocket, BrainCircuit } from 'lucide-react';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="h-screen w-full bg-slate-900 text-white flex flex-col justify-center items-center gap-6">
+      <div className="flex items-center gap-3">
+        <BrainCircuit size={48} className="text-blue-400" />
+        <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+          Portfolio AI
+        </h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+
+      <p className="text-gray-400 text-lg">
+        Probando Lucide Icons + Tailwind CSS
       </p>
-    </>
-  )
+
+      <button className="flex items-center gap-2 px-6 py-3 bg-purple-600 rounded-full hover:bg-purple-500 transition font-semibold shadow-lg shadow-purple-500/30">
+        <Rocket size={20} />
+        <span>Lanzar Proyecto</span>
+      </button>
+    </div>
+  );
 }
 
-export default App
+export default App;
