@@ -65,7 +65,7 @@ export default function Certifications() {
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
                         Certifications
                     </h2>
-                    <p className="dark:text-gray-400 light:text-gray-600 max-w-2xl mx-auto text-lg">
+                    <p className="dark:text-gray-400 light:text-gray-700 max-w-2xl mx-auto text-lg">
                         Professional credentials that validate my technical expertise and commitment to continuous learning.
                     </p>
                 </motion.div>
@@ -84,7 +84,7 @@ export default function Certifications() {
                                 <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 group-hover:scale-110 transition-transform duration-300">
                                     <cert.icon size={24} />
                                 </div>
-                                <span className="text-xs font-mono dark:text-gray-500 light:text-gray-600 border dark:border-white/10 light:border-gray-300 px-2 py-1 rounded-full">
+                                <span className="text-xs font-mono dark:text-gray-500 light:text-gray-700 border dark:border-white/10 light:border-gray-300 px-2 py-1 rounded-full">
                                     {cert.date}
                                 </span>
                             </div>
@@ -93,21 +93,34 @@ export default function Certifications() {
                                 <h3 className="text-lg font-bold dark:text-gray-100 light:text-gray-900 mb-1 group-hover:text-blue-400 transition-colors line-clamp-2">
                                     {cert.title}
                                 </h3>
-                                <p className="text-sm dark:text-gray-400 light:text-gray-600">{cert.issuer}</p>
+                                <p className="text-sm dark:text-gray-400 light:text-gray-700">{cert.issuer}</p>
                             </div>
 
                             {cert.credentialId && (
-                                <div className="text-xs dark:text-gray-500 light:text-gray-600 font-mono dark:bg-white/5 light:bg-gray-100 p-2 rounded">
+                                <div className="text-xs dark:text-gray-500 light:text-gray-700 font-mono dark:bg-white/5 light:bg-gray-100 p-2 rounded">
                                     ID: {cert.credentialId}
                                 </div>
                             )}
 
-                            <div className="mt-auto pt-4 border-t border-white/5 flex flex-wrap gap-2">
-                                {cert.skills.map(skill => (
-                                    <span key={skill} className="text-xs px-2 py-1 rounded bg-blue-500/5 text-blue-300/80 border border-blue-500/10">
-                                        {skill}
-                                    </span>
-                                ))}
+                            <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
+                                <div className="flex flex-wrap gap-2">
+                                    {cert.skills.map(skill => (
+                                        <span key={skill} className="text-xs px-2 py-1 rounded bg-blue-500/5 text-blue-300/80 border border-blue-500/10">
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
+                                {cert.link && (
+                                    <a
+                                        href={cert.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-2 text-gray-500 hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg"
+                                        aria-label={`View ${cert.title} credential`}
+                                    >
+                                        <ExternalLink size={18} />
+                                    </a>
+                                )}
                             </div>
                         </motion.div>
                     ))}

@@ -48,14 +48,15 @@ export default function Header() {
             >
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
                     {/* Logo */}
-                    <div
+                    <button
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                        className="cursor-pointer group flex items-center gap-2"
+                        className="cursor-pointer group flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg p-1"
+                        aria-label="Back to top"
                     >
                         <span className="font-bold text-xl tracking-tight group-hover:text-blue-400 transition-colors font-mono dark:text-white light:text-gray-900">
-                            alex<span className="text-blue-500">.dev</span>
+                            alex<span className="dark:text-blue-500 light:text-blue-600">.dev</span>
                         </span>
-                    </div>
+                    </button>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center gap-8">
@@ -63,7 +64,8 @@ export default function Header() {
                             <button
                                 key={item}
                                 onClick={() => scrollToSection(item.toLowerCase())}
-                                className="text-sm font-medium dark:text-gray-400 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900 transition-colors relative group"
+                                className="text-sm font-medium dark:text-gray-400 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 transition-colors relative group focus:outline-none focus:text-blue-500"
+                                aria-label={`Scroll to ${item}`}
                             >
                                 {item}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
@@ -111,7 +113,8 @@ export default function Header() {
                                     </span>
                                     <button
                                         onClick={() => setMobileMenuOpen(false)}
-                                        className="p-2 dark:text-white light:text-gray-900 hover:bg-white/10 rounded-lg transition-colors"
+                                        className="p-2 dark:text-white light:text-gray-900 hover:bg-white/10 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        aria-label="Close menu"
                                     >
                                         <X size={20} />
                                     </button>
@@ -126,7 +129,8 @@ export default function Header() {
                                             animate={{ opacity: 1, x: 0 }}
                                             transition={{ delay: index * 0.05 }}
                                             onClick={() => scrollToSection(item.toLowerCase())}
-                                            className="text-left px-4 py-3 text-base font-medium dark:text-gray-300 dark:hover:text-white dark:hover:bg-white/10 light:text-gray-700 light:hover:text-gray-900 light:hover:bg-gray-100 rounded-lg transition-all"
+                                            className="text-left px-4 py-3 text-base font-medium dark:text-gray-300 dark:hover:text-white dark:hover:bg-white/10 light:text-gray-700 light:hover:text-gray-900 light:hover:bg-gray-100 rounded-lg transition-all focus:outline-none focus:bg-blue-500/10"
+                                            aria-label={`Scroll to ${item}`}
                                         >
                                             {item}
                                         </motion.button>
@@ -145,12 +149,12 @@ export default function Header() {
                                                 {theme === 'dark' ? (
                                                     <>
                                                         <Sun size={18} className="text-yellow-400" />
-                                                        <span className="text-sm dark:text-gray-400 light:text-gray-600">Light</span>
+                                                        <span className="text-sm dark:text-gray-400 light:text-gray-700">Light</span>
                                                     </>
                                                 ) : (
                                                     <>
                                                         <Moon size={18} className="text-blue-600" />
-                                                        <span className="text-sm dark:text-gray-400 light:text-gray-600">Dark</span>
+                                                        <span className="text-sm dark:text-gray-400 light:text-gray-700">Dark</span>
                                                     </>
                                                 )}
                                             </div>

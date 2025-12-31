@@ -35,7 +35,7 @@ export default function Education() {
                     className="flex items-center gap-4 mb-12"
                 >
                     <div className="p-3 bg-blue-500/10 rounded-xl border border-blue-500/20">
-                        <GraduationCap className="text-blue-400" size={32} />
+                        <GraduationCap className="text-blue-400" size={32} aria-hidden="true" />
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold">Education</h2>
                 </motion.div>
@@ -57,12 +57,12 @@ export default function Education() {
                                 <h3 className="text-xl font-bold dark:text-white light:text-gray-900 mb-1">{edu.degree}</h3>
                                 <h4 className="text-blue-400 font-medium mb-4">{edu.school}</h4>
 
-                                <div className="flex items-center gap-2 text-sm dark:text-gray-500 light:text-gray-600 mb-4">
-                                    <Calendar size={14} />
+                                <div className="flex items-center gap-2 text-sm dark:text-gray-500 light:text-gray-700 mb-4">
+                                    <Calendar size={14} aria-hidden="true" />
                                     <span>{edu.period}</span>
                                 </div>
 
-                                <p className="dark:text-gray-400 light:text-gray-600 text-sm leading-relaxed">
+                                <p className="dark:text-gray-400 light:text-gray-700 text-sm leading-relaxed">
                                     {edu.description}
                                 </p>
                             </div>

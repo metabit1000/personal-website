@@ -54,7 +54,7 @@ export default function Home() {
             <Projects />
             <Contact />
 
-            <footer className="py-8 text-center dark:text-gray-600 light:text-gray-500 text-sm dark:border-t dark:border-white/5 light:border-t light:border-gray-200">
+            <footer className="py-8 text-center dark:text-gray-600 light:text-gray-700 text-sm dark:border-t dark:border-white/5 light:border-t light:border-gray-200">
                 <p>© {new Date().getFullYear()} Àlex Aguilera Martínez. Built with Next.js.</p>
             </footer>
 

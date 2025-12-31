@@ -40,7 +40,7 @@ export default function ScrollToTop() {
                     exit={{ opacity: 0, y: 20 }}
                     transition={{ duration: 0.2 }}
                     onClick={scrollToTop}
-                    className="fixed bottom-4 right-20 md:bottom-6 md:right-24 z-40 w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-colors"
+                    className="fixed bottom-4 right-20 md:bottom-6 md:right-24 z-40 w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-colors focus:outline-none focus:ring-4 focus:ring-blue-500/50"
                     aria-label="Scroll to top"
                 >
                     <ArrowUp size={24} />

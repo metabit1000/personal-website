@@ -62,7 +62,8 @@ export default function ChatWidget() {
                             </div>
                             <button
                                 onClick={() => setIsOpen(false)}
-                                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors p-1 hover:bg-gray-200 dark:hover:bg-white/10 rounded-full"
+                                className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors p-1 hover:bg-gray-200 dark:hover:bg-white/10 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                aria-label="Close chat assistant"
                             >
                                 <X size={18} />
                             </button>
@@ -172,7 +173,8 @@ export default function ChatWidget() {
                                 <button
                                     type="submit"
                                     disabled={isLoading || !input.trim()}
-                                    className="absolute right-1.5 p-2 bg-blue-600 text-white rounded-full hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg shadow-blue-600/20"
+                                    className="absolute right-1.5 p-2 bg-blue-600 text-white rounded-full hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg shadow-blue-600/20 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                    aria-label="Send message"
                                 >
                                     <Send size={16} />
                                 </button>
@@ -186,7 +188,9 @@ export default function ChatWidget() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-600/30 hover:bg-blue-500 transition-colors z-50"
+                className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-600/30 hover:bg-blue-500 transition-colors z-50 focus:outline-none focus:ring-4 focus:ring-blue-500/50"
+                aria-label={isOpen ? "Close chat assistant" : "Open chat assistant"}
+                aria-expanded={isOpen}
             >
                 {isOpen ? <X size={20} className="md:w-6 md:h-6" /> : <MessageSquare size={20} className="md:w-6 md:h-6" />}
             </motion.button>

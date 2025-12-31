@@ -24,11 +24,11 @@ export default function Hero() {
                     Àlex Aguilera Martínez
                 </h1>
 
-                <h2 className="text-2xl md:text-4xl font-light dark:text-gray-400 light:text-gray-600 mb-8">
+                <h2 className="text-2xl md:text-4xl font-light dark:text-gray-400 light:text-gray-800 mb-8">
                     Full Stack Developer
                 </h2>
 
-                <p className="text-lg dark:text-gray-400 light:text-gray-600 max-w-2xl mb-10 leading-relaxed">
+                <p className="text-lg dark:text-gray-400 light:text-gray-700 max-w-2xl mb-10 leading-relaxed">
                     Over 5 years of experience building robust software solutions.
                     Specializing in Java, Spring Boot, and modern web technologies.
                     Passionate about creating efficient, scalable, and user-centric applications.
@@ -37,29 +37,31 @@ export default function Hero() {
                 <div className="flex flex-wrap gap-4">
                     <button
                         onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="px-8 py-3 dark:bg-white dark:text-black dark:hover:bg-gray-200 light:bg-blue-600 light:text-white light:hover:bg-blue-700 font-medium rounded-full transition-colors flex items-center gap-2 shadow-lg cursor-pointer"
+                        className="px-8 py-3 dark:bg-white dark:text-black dark:hover:bg-gray-200 light:bg-blue-600 light:text-white light:hover:bg-blue-700 font-medium rounded-full transition-colors flex items-center gap-2 shadow-lg cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-500/50"
+                        aria-label="View my expertise and skills"
                     >
                         View Expertise <ArrowRight size={18} />
                     </button>
                     <button
                         onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="px-8 py-3 dark:bg-white/5 dark:text-white dark:border-white/10 dark:hover:bg-white/10 light:bg-white light:text-gray-900 light:border-gray-300 light:hover:bg-gray-50 font-medium rounded-full border transition-colors backdrop-blur-sm shadow-lg cursor-pointer"
+                        className="px-8 py-3 dark:bg-white/5 dark:text-white dark:border-white/10 dark:hover:bg-white/10 light:bg-white light:text-gray-900 light:border-gray-300 light:hover:bg-gray-50 font-medium rounded-full border transition-colors backdrop-blur-sm shadow-lg cursor-pointer focus:outline-none focus:ring-4 focus:ring-white/20"
+                        aria-label="Scroll to contact section"
                     >
                         Contact Me
                     </button>
                 </div>
 
                 <div className="flex gap-6 mt-8">
-                    <a href="https://github.com/metabit1000" target="_blank" rel="noopener noreferrer" className="dark:text-gray-400 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900 transition-colors">
+                    <a href="https://github.com/metabit1000" target="_blank" rel="noopener noreferrer" className="dark:text-gray-400 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900 transition-colors focus:outline-none focus:text-blue-500" aria-label="Visit my GitHub profile">
                         <Github size={24} />
                     </a>
-                    <a href="https://www.linkedin.com/in/alex-aguilera-martinez/" target="_blank" rel="noopener noreferrer" className="dark:text-gray-400 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900 transition-colors">
+                    <a href="https://www.linkedin.com/in/alex-aguilera-martinez/" target="_blank" rel="noopener noreferrer" className="dark:text-gray-400 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900 transition-colors focus:outline-none focus:text-blue-500" aria-label="Visit my LinkedIn profile">
                         <Linkedin size={24} />
                     </a>
                 </div>
 
                 <div className="mt-8 pt-6">
-                    <p className="text-sm dark:text-gray-500 light:text-gray-600 mb-4 font-mono uppercase tracking-wider">Languages</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-500 mb-4 font-mono uppercase tracking-wider">Languages</p>
                     <div className="flex flex-wrap gap-4">
                         {[
                             { name: "Spanish", flag: "https://flagcdn.com/w40/es.png" },

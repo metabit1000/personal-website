@@ -43,7 +43,7 @@ export default function Projects() {
                     <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
                         Featured Projects
                     </h2>
-                    <p className="dark:text-gray-400 light:text-gray-600 max-w-2xl mx-auto">
+                    <p className="dark:text-gray-400 light:text-gray-700 max-w-2xl mx-auto">
                         A selection of my recent work in software engineering, cloud infrastructure, and full-stack development.
                     </p>
                 </motion.div>
@@ -60,17 +60,29 @@ export default function Projects() {
                         >
                             <div className="flex justify-between items-start mb-4">
                                 <h3 className="text-2xl font-bold group-hover:text-blue-400 transition-colors">{project.title}</h3>
-                                <div className="flex gap-3 dark:text-gray-500 light:text-gray-600">
-                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="dark:hover:text-white light:hover:text-gray-900 transition-colors">
-                                        <Github size={20} />
+                                <div className="flex gap-3 dark:text-gray-500 light:text-gray-700">
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="dark:hover:text-white light:hover:text-gray-900 transition-colors focus:outline-none focus:text-blue-500"
+                                        aria-label={`View ${project.title} on GitHub`}
+                                    >
+                                        <Github size={20} aria-hidden="true" />
                                     </a>
-                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="dark:hover:text-white light:hover:text-gray-900 transition-colors">
-                                        <ExternalLink size={20} />
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="dark:hover:text-white light:hover:text-gray-900 transition-colors focus:outline-none focus:text-blue-500"
+                                        aria-label={`View live demo of ${project.title}`}
+                                    >
+                                        <ExternalLink size={20} aria-hidden="true" />
                                     </a>
                                 </div>
                             </div>
 
-                            <p className="dark:text-gray-400 light:text-gray-600 mb-6 leading-relaxed flex-1">
+                            <p className="dark:text-gray-400 light:text-gray-700 mb-6 leading-relaxed flex-1">
                                 {project.description}
                             </p>
 
@@ -82,8 +94,8 @@ export default function Projects() {
                                 ))}
                             </div>
 
-                            <div className="flex items-center gap-4 text-sm dark:text-gray-500 light:text-gray-600 pt-4 border-t dark:border-white/5 light:border-gray-200">
-                                <div className="ml-auto text-xs font-mono dark:text-gray-600 light:text-gray-500">
+                            <div className="flex items-center gap-4 text-sm dark:text-gray-500 light:text-gray-700 pt-4 border-t dark:border-white/5 light:border-gray-200">
+                                <div className="ml-auto text-xs font-mono dark:text-gray-600 light:text-gray-700">
                                     Updated recently
                                 </div>
                             </div>

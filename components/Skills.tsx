@@ -43,7 +43,7 @@ export default function Skills() {
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
                         Technical Expertise
                     </h2>
-                    <p className="dark:text-gray-400 light:text-gray-600 max-w-2xl mx-auto text-lg">
+                    <p className="dark:text-gray-400 light:text-gray-700 max-w-2xl mx-auto text-lg">
                         A comprehensive toolkit of modern technologies I use to build scalable, high-performance applications.
                     </p>
                 </motion.div>
@@ -60,7 +60,7 @@ export default function Skills() {
                         >
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                                    <category.icon size={28} />
+                                    <category.icon size={28} aria-hidden="true" />
                                 </div>
                                 <h3 className="text-xl font-bold dark:text-gray-100 light:text-gray-900 group-hover:text-blue-400 transition-colors">
                                     {category.category}
