@@ -40,7 +40,7 @@ export default function Education() {
                     <h2 className="text-3xl md:text-4xl font-bold">Education</h2>
                 </motion.div>
 
-                <div className="relative border-l-2 border-white/10 ml-6 space-y-12">
+                <div className="relative border-l-2 dark:border-white/10 light:border-gray-300 ml-6 space-y-12">
                     {education.map((edu, idx) => (
                         <motion.div
                             key={idx}
@@ -54,15 +54,15 @@ export default function Education() {
                             <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-black shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
 
                             <div className="glass-card p-6 hover:bg-white/5 transition-colors">
-                                <h3 className="text-xl font-bold text-white mb-1">{edu.degree}</h3>
+                                <h3 className="text-xl font-bold dark:text-white light:text-gray-900 mb-1">{edu.degree}</h3>
                                 <h4 className="text-blue-400 font-medium mb-4">{edu.school}</h4>
 
-                                <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                                <div className="flex items-center gap-2 text-sm dark:text-gray-500 light:text-gray-600 mb-4">
                                     <Calendar size={14} />
                                     <span>{edu.period}</span>
                                 </div>
 
-                                <p className="text-gray-400 text-sm leading-relaxed">
+                                <p className="dark:text-gray-400 light:text-gray-600 text-sm leading-relaxed">
                                     {edu.description}
                                 </p>
                             </div>

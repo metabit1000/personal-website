@@ -22,7 +22,7 @@ export async function POST(req: Request) {
             - Backend: Java, Spring Boot, Microservices, REST APIs, Node.js, Python, FastAPI.
             - Frontend: React, Next.js, TypeScript, Tailwind CSS, Framer Motion, Angular.
             - Cloud & Data: AWS, Docker, Kubernetes, PostgreSQL, MongoDB, Redis, SAP BTP.
-            - DevOps: Git, CI/CD, Jenkins, Terraform, Ansible, Linux.
+            - DevOps: Git, CI/CD, Jenkins, Kibana, Dynatrace, Linux.
             
             Featured Projects:
             1. GeoGreenAI: Full-stack app detecting urban green areas using Deep Learning (DeepLabV3+), FastAPI, and React.

@@ -31,45 +31,45 @@ export default function Hero() {
                     Àlex Aguilera Martínez
                 </h1>
 
-                <h2 className="text-2xl md:text-4xl font-light text-gray-400 mb-8">
+                <h2 className="text-2xl md:text-4xl font-light dark:text-gray-400 light:text-gray-600 mb-8">
                     Full Stack Developer
                 </h2>
 
-                <p className="text-lg text-gray-400 max-w-2xl mb-10 leading-relaxed">
+                <p className="text-lg dark:text-gray-400 light:text-gray-600 max-w-2xl mb-10 leading-relaxed">
                     Over 5 years of experience building robust software solutions.
                     Specializing in Java, Spring Boot, and modern web technologies.
                     Passionate about creating efficient, scalable, and user-centric applications.
                 </p>
 
                 <div className="flex flex-wrap gap-4">
-                    <a
-                        href="#skills"
-                        className="px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors flex items-center gap-2"
+                    <button
+                        onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}
+                        className="px-8 py-3 dark:bg-white dark:text-black dark:hover:bg-gray-200 light:bg-blue-600 light:text-white light:hover:bg-blue-700 font-medium rounded-full transition-colors flex items-center gap-2 shadow-lg cursor-pointer"
                     >
                         View Expertise <ArrowRight size={18} />
-                    </a>
-                    <a
-                        href="#contact"
-                        className="px-8 py-3 bg-white/5 text-white font-medium rounded-full border border-white/10 hover:bg-white/10 transition-colors backdrop-blur-sm"
+                    </button>
+                    <button
+                        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                        className="px-8 py-3 dark:bg-white/5 dark:text-white dark:border-white/10 dark:hover:bg-white/10 light:bg-white light:text-gray-900 light:border-gray-300 light:hover:bg-gray-50 font-medium rounded-full border transition-colors backdrop-blur-sm shadow-lg cursor-pointer"
                     >
                         Contact Me
-                    </a>
+                    </button>
                 </div>
 
                 <div className="flex gap-6 mt-8">
-                    <a href="https://github.com/metabit1000" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                    <a href="https://github.com/metabit1000" target="_blank" rel="noopener noreferrer" className="dark:text-gray-400 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900 transition-colors">
                         <Github size={24} />
                     </a>
-                    <a href="https://www.linkedin.com/in/alex-aguilera-martinez/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                    <a href="https://www.linkedin.com/in/alex-aguilera-martinez/" target="_blank" rel="noopener noreferrer" className="dark:text-gray-400 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900 transition-colors">
                         <Linkedin size={24} />
                     </a>
-                    <a href="mailto:aslexag0@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                    <a href="mailto:aslexag0@gmail.com" className="dark:text-gray-400 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900 transition-colors">
                         <Mail size={24} />
                     </a>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-white/5">
-                    <p className="text-sm text-gray-500 mb-4 font-mono uppercase tracking-wider">Languages</p>
+                <div className="mt-8 pt-6">
+                    <p className="text-sm dark:text-gray-500 light:text-gray-600 mb-4 font-mono uppercase tracking-wider">Languages</p>
                     <div className="flex flex-wrap gap-4">
                         {[
                             { name: "Spanish", flag: "https://flagcdn.com/w40/es.png" },
@@ -77,13 +77,13 @@ export default function Hero() {
                             { name: "English", flag: "https://flagcdn.com/w40/gb.png" },
                             { name: "Italian", flag: "https://flagcdn.com/w40/it.png" }
                         ].map((lang) => (
-                            <div key={lang.name} className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors cursor-default">
+                            <div key={lang.name} className="flex items-center gap-3 px-4 py-2 rounded-full dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10 light:bg-gray-100 light:border-gray-300 light:hover:bg-gray-200 border transition-colors cursor-default">
                                 <img
                                     src={lang.flag}
                                     alt={lang.name}
                                     className="w-5 h-5 rounded-full object-cover shadow-sm"
                                 />
-                                <span className="text-sm text-gray-300 font-medium">{lang.name}</span>
+                                <span className="text-sm dark:text-gray-300 light:text-gray-700 font-medium">{lang.name}</span>
                             </div>
                         ))}
                     </div>

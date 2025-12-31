@@ -32,32 +32,123 @@
   --ring: 224 76% 48%;
 }
 
+.light {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+
+  --accent: 210 40% 96%;
+  --accent-foreground: 222 47% 11%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 217 91% 60%;
+}
+
 body {
-  @apply bg-black text-white antialiased;
+  @apply antialiased transition-colors duration-300;
+}
+
+/* Dark Theme */
+body.dark {
+  @apply bg-black text-white;
   background-image:
     radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
     radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
   background-attachment: fixed;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
+/* Light Theme */
+body.light {
+  @apply text-gray-900;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 50%, #fce7f3 100%);
+  background-attachment: fixed;
+}
+
+/* Light theme text colors */
+.light h1,
+.light h2,
+.light h3,
+.light h4,
+.light h5,
+.light h6 {
+  @apply text-gray-900;
+}
+
+.light p,
+.light span,
+.light div {
+  @apply text-gray-800;
+}
+
+/* Custom Scrollbar - Dark */
+.dark ::-webkit-scrollbar {
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
+.dark ::-webkit-scrollbar-track {
   background: black;
 }
 
-::-webkit-scrollbar-thumb {
+.dark ::-webkit-scrollbar-thumb {
   background: #333;
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+.dark ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
+/* Custom Scrollbar - Light */
+.light ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f8f8f8;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Glass Card */
 .glass-card {
-  @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
+  @apply backdrop-blur-lg rounded-xl transition-colors duration-300;
+}
+
+.dark .glass-card {
+  @apply bg-white/5 border border-white/10;
+}
+
+.light .glass-card {
+  @apply bg-white/95 border border-gray-200/60 shadow-2xl;
+  backdrop-filter: blur(20px);
+}
+
+/* Footer in light mode */
+.light footer {
+  @apply text-gray-500 border-gray-200;
 }

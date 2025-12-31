@@ -65,7 +65,7 @@ export default function Certifications() {
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
                         Certifications
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                    <p className="dark:text-gray-400 light:text-gray-600 max-w-2xl mx-auto text-lg">
                         Professional credentials that validate my technical expertise and commitment to continuous learning.
                     </p>
                 </motion.div>
@@ -84,20 +84,20 @@ export default function Certifications() {
                                 <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 group-hover:scale-110 transition-transform duration-300">
                                     <cert.icon size={24} />
                                 </div>
-                                <span className="text-xs font-mono text-gray-500 border border-white/10 px-2 py-1 rounded-full">
+                                <span className="text-xs font-mono dark:text-gray-500 light:text-gray-600 border dark:border-white/10 light:border-gray-300 px-2 py-1 rounded-full">
                                     {cert.date}
                                 </span>
                             </div>
 
                             <div>
-                                <h3 className="text-lg font-bold text-gray-100 mb-1 group-hover:text-blue-400 transition-colors line-clamp-2">
+                                <h3 className="text-lg font-bold dark:text-gray-100 light:text-gray-900 mb-1 group-hover:text-blue-400 transition-colors line-clamp-2">
                                     {cert.title}
                                 </h3>
-                                <p className="text-sm text-gray-400">{cert.issuer}</p>
+                                <p className="text-sm dark:text-gray-400 light:text-gray-600">{cert.issuer}</p>
                             </div>
 
                             {cert.credentialId && (
-                                <div className="text-xs text-gray-500 font-mono bg-white/5 p-2 rounded">
+                                <div className="text-xs dark:text-gray-500 light:text-gray-600 font-mono dark:bg-white/5 light:bg-gray-100 p-2 rounded">
                                     ID: {cert.credentialId}
                                 </div>
                             )}

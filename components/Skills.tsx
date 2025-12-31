@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Server, Code2, Database, Terminal, Cpu, Globe, Layers, Wrench } from 'lucide-react';
+import { Server, Code2, Database, Terminal } from 'lucide-react';
 
 const skills = [
     {
@@ -22,7 +22,7 @@ const skills = [
     {
         category: "DevOps & Tools",
         icon: Terminal,
-        items: ["Git", "CI/CD", "Jenkins", "Terraform", "Ansible", "Linux", "Jira"]
+        items: ["Git", "CI/CD", "Jenkins", "Kibana", "Dynatrace", "Linux", "Jira"]
     },
 ];
 
@@ -43,7 +43,7 @@ export default function Skills() {
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
                         Technical Expertise
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                    <p className="dark:text-gray-400 light:text-gray-600 max-w-2xl mx-auto text-lg">
                         A comprehensive toolkit of modern technologies I use to build scalable, high-performance applications.
                     </p>
                 </motion.div>
@@ -62,7 +62,7 @@ export default function Skills() {
                                 <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 group-hover:scale-110 transition-transform duration-300">
                                     <category.icon size={28} />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-100 group-hover:text-blue-400 transition-colors">
+                                <h3 className="text-xl font-bold dark:text-gray-100 light:text-gray-900 group-hover:text-blue-400 transition-colors">
                                     {category.category}
                                 </h3>
                             </div>
@@ -74,7 +74,7 @@ export default function Skills() {
                                         initial={{ opacity: 0, scale: 0.9 }}
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         transition={{ delay: (idx * 0.1) + (itemIdx * 0.05) }}
-                                        className="px-3 py-1.5 text-sm rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10 hover:border-blue-500/30 hover:text-blue-300 transition-all cursor-default"
+                                        className="px-3 py-1.5 text-sm rounded-lg dark:bg-white/5 dark:border-white/10 dark:text-gray-300 dark:hover:bg-white/10 light:bg-gray-100 light:border-gray-300 light:text-gray-700 light:hover:bg-gray-200 border hover:border-blue-500/30 hover:text-blue-400 transition-all cursor-default"
                                     >
                                         {item}
                                     </motion.span>
