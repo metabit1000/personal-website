@@ -1,8 +1,8 @@
 # Àlex Aguilera Martínez - Portfolio
 
-A modern, high-performance personal portfolio website built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**. 
+A modern, high-performance personal portfolio website built with **Next.js 16**, **TypeScript**, and **Tailwind CSS**. 
 
-This project showcases my professional experience, technical skills, and featured projects in a sleek, dark-mode interface with glassmorphism effects and smooth animations. It features an integrated **AI Chatbot** powered by Google Gemini to answer questions about my profile in real-time.
+This project showcases my professional experience, technical skills, and featured projects in a sleek, dark-mode interface with glassmorphism effects and smooth animations. It features an integrated **AI Chatbot** powered by Google Gemini with gemma-3-27b to answer questions about my profile in real-time.
 
 ![Portfolio Preview](https://github.com/metabit1000/personal-website/raw/main/public/preview.png)
 
