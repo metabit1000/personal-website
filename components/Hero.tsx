@@ -5,7 +5,7 @@ import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 
 export default function Hero() {
     return (
-        <section className="min-h-screen flex flex-col justify-center px-6 md:px-20 relative overflow-hidden">
+        <section className="min-h-screen flex flex-col justify-center px-6 md:px-20 pt-32 md:pt-0 relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
                 <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px]" />
