@@ -10,8 +10,42 @@ import Contact from "@/components/Contact";
 import Header from "@/components/Header";
 
 export default function Home() {
+    // Structured data for SEO (JSON-LD)
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Àlex Aguilera Martínez",
+        "jobTitle": "Full Stack Developer",
+        "description": "Full Stack Developer specializing in modern web technologies including Next.js, React, TypeScript, and AI-powered applications",
+        "url": "https://alex-aguilera.vercel.app/",
+        "sameAs": [
+            "https://www.linkedin.com/in/alex-aguilera-martinez",
+            "https://github.com/metabit1000",
+        ],
+        "knowsAbout": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "JavaScript",
+            "Full Stack Development",
+            "Web Development",
+            "AI Integration",
+            "Frontend Development",
+            "Backend Development"
+        ],
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Universitat Politècnica de Catalunya"
+        }
+    };
+
     return (
         <main className="min-h-screen selection:bg-blue-500/30">
+            {/* Structured Data for SEO */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+            />
             <Header />
             <Hero />
             <Skills />

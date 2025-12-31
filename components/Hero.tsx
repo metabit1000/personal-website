@@ -18,14 +18,7 @@ export default function Hero() {
                 transition={{ duration: 0.8 }}
                 className="max-w-4xl"
             >
-                <motion.span
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="inline-block px-3 py-1 mb-4 text-sm font-medium text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20"
-                >
-                    Available for new opportunities
-                </motion.span>
+
 
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400 py-2 leading-tight">
                     Àlex Aguilera Martínez
@@ -62,9 +55,6 @@ export default function Hero() {
                     </a>
                     <a href="https://www.linkedin.com/in/alex-aguilera-martinez/" target="_blank" rel="noopener noreferrer" className="dark:text-gray-400 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900 transition-colors">
                         <Linkedin size={24} />
-                    </a>
-                    <a href="mailto:aslexag0@gmail.com" className="dark:text-gray-400 dark:hover:text-white light:text-gray-600 light:hover:text-gray-900 transition-colors">
-                        <Mail size={24} />
                     </a>
                 </div>
 

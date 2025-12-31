@@ -36,7 +36,7 @@ export default function ChatWidget() {
     const isLoading = status === 'submitted' || status === 'streaming';
 
     return (
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40 flex flex-col items-end">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -44,7 +44,7 @@ export default function ChatWidget() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="mb-4 w-[380px] md:w-[450px] h-[600px] glass-card flex flex-col shadow-2xl overflow-hidden border border-gray-200 dark:border-white/10"
+                        className="mb-4 w-[calc(100vw-2rem)] max-w-[380px] md:max-w-[450px] h-[calc(100vh-8rem)] max-h-[600px] md:h-[600px] glass-card flex flex-col shadow-2xl overflow-hidden border border-gray-200 dark:border-white/10"
                     >
                         {/* Header */}
                         <div className="p-4 border-b border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 flex items-center justify-between backdrop-blur-md">
@@ -186,9 +186,9 @@ export default function ChatWidget() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-600/30 hover:bg-blue-500 transition-colors z-50"
+                className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-600/30 hover:bg-blue-500 transition-colors z-50"
             >
-                {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
+                {isOpen ? <X size={20} className="md:w-6 md:h-6" /> : <MessageSquare size={20} className="md:w-6 md:h-6" />}
             </motion.button>
         </div>
     );
