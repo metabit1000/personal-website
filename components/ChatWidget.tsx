@@ -1,6 +1,7 @@
 'use client';
 
-import { useChat } from 'ai/react';
+import { useChat } from '@ai-sdk/react';
+import { DefaultChatTransport } from 'ai';
 import { Send, Bot, User, X, MessageSquare, Loader2, RefreshCw } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -8,10 +9,12 @@ import ReactMarkdown from 'react-markdown';
 
 export default function ChatWidget() {
     const [isOpen, setIsOpen] = useState(false);
-    const { messages, input, handleInputChange, handleSubmit, isLoading, error, reload } = useChat({
-        onError: (error) => {
-            console.error('Chat error:', error);
-        }
+    const [input, setInput] = useState('');
+
+    const { messages, sendMessage, status, error, regenerate, stop } = useChat({
+        transport: new DefaultChatTransport({
+            api: '/api/chat',
+        }),
     });
 
     const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -21,6 +24,16 @@ export default function ChatWidget() {
             messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
         }
     }, [messages]);
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (input.trim() && status === 'ready') {
+            sendMessage({ text: input });
+            setInput('');
+        }
+    };
+
+    const isLoading = status === 'submitted' || status === 'streaming';
 
     return (
         <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
@@ -95,7 +108,9 @@ export default function ChatWidget() {
                                                     a: ({ href, children }: any) => <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">{children}</a>
                                                 }}
                                             >
-                                                {m.content}
+                                                {m.parts.map((part, index) =>
+                                                    part.type === 'text' ? part.text : ''
+                                                ).join('')}
                                             </ReactMarkdown>
                                         </div>
                                     </div>
@@ -109,11 +124,29 @@ export default function ChatWidget() {
                                 </div>
                             )}
 
-                            {error && (
+                            {status === 'error' && error && (
                                 <div className="mx-auto max-w-[90%] p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-xs flex flex-col gap-2">
-                                    <p>Error: {error.message}</p>
+                                    <p>
+                                        {(() => {
+                                            try {
+                                                let msg = error.message;
+                                                // Remove "Error: " prefix if present
+                                                if (msg.startsWith("Error: ")) {
+                                                    msg = msg.slice(7);
+                                                }
+                                                // Try to parse if it's a JSON string
+                                                const parsed = JSON.parse(msg);
+                                                return parsed.error || msg;
+                                            } catch {
+                                                return error.message;
+                                            }
+                                        })()}
+                                    </p>
                                     <button
-                                        onClick={() => reload()}
+                                        onClick={() => {
+                                            console.log("Retrying...");
+                                            regenerate();
+                                        }}
                                         className="flex items-center gap-1 self-end hover:text-white transition-colors"
                                     >
                                         <RefreshCw size={12} /> Retry
@@ -129,8 +162,9 @@ export default function ChatWidget() {
                                 <input
                                     className="w-full bg-zinc-900/50 border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-blue-500/50 placeholder:text-gray-500 transition-all"
                                     value={input}
-                                    onChange={handleInputChange}
+                                    onChange={(e) => setInput(e.target.value)}
                                     placeholder="Type a message..."
+                                    disabled={isLoading}
                                 />
                                 <button
                                     type="submit"

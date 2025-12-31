@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import ChatWidget from "@/components/ChatWidget";
+import ScrollToTop from "@/components/ScrollToTop";
 import Education from "@/components/Education";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
@@ -22,6 +23,7 @@ export default function Home() {
                 <p>© {new Date().getFullYear()} Àlex Aguilera Martínez. Built with Next.js.</p>
             </footer>
 
+            <ScrollToTop />
             <ChatWidget />
         </main>
     );

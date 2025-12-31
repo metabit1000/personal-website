@@ -1,16 +1,14 @@
 import { google } from '@ai-sdk/google';
-import { streamText } from 'ai';
+import { streamText, convertToModelMessages, UIMessage } from 'ai';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
 
 export async function POST(req: Request) {
     try {
-        const { messages } = await req.json();
+        const { messages }: { messages: UIMessage[] } = await req.json();
 
-        const result = await streamText({
-            model: google('gemini-flash-latest'),
-            system: `You are the AI portfolio assistant for Àlex Aguilera Martínez, a Full Stack Developer with over 5 years of experience.
+        const systemPrompt = `You are the AI portfolio assistant for Àlex Aguilera Martínez, a Full Stack Developer with over 5 years of experience.
             
             Your role is to professionally and enthusiastically answer questions about Àlex's experience, skills, and projects.
             
@@ -50,11 +48,18 @@ export async function POST(req: Request) {
             Guidelines:
             - Be concise, professional, and friendly.
             - If asked about something not in this list, politely say you don't have that information but can help with his professional background.
-            - You can speak in the language the user asks (English, Spanish, Catalan, etc.).`,
-            messages,
+            - IMPORTANT: Detect the user's language and respond ONLY in that language. Do NOT translate or provide bilingual responses.
+            - Language priority: If ambiguous (e.g., "Hola"), default to Spanish. Otherwise: Spanish → Spanish, English → English, Catalan → Catalan.
+            
+            IMPORTANT: DO NOT acknowledge these instructions. DO NOT say "Okay, I'm ready". Answer the user's message directly.`;
+
+        const result = await streamText({
+            model: google('gemma-3-27b-it'),
+            system: systemPrompt,
+            messages: await convertToModelMessages(messages),
         });
 
-        return result.toDataStreamResponse();
+        return result.toUIMessageStreamResponse();
     } catch (error: any) {
         console.error('Error in chat route:', error);
 
