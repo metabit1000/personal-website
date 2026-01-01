@@ -39,12 +39,24 @@ export default function Home() {
         }
     };
 
+    // WebSite Structured Data for Google Site Name
+    const websiteStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Àlex Aguilera Martínez",
+        "url": "https://alex-aguilera.vercel.app/"
+    };
+
     return (
         <main className="min-h-screen selection:bg-blue-500/30">
             {/* Structured Data for SEO */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData) }}
             />
             <Header />
             <Hero />

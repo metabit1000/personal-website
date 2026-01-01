@@ -46,22 +46,15 @@ export const metadata: Metadata = {
         url: 'https://alex-aguilera.vercel.app',
         title: "Àlex Aguilera Martínez | Full Stack Developer",
         description: "Full Stack Developer specializing in modern web technologies. Explore my portfolio featuring Next.js, React, TypeScript, and AI-powered projects.",
-        siteName: "Àlex Aguilera Martínez Portfolio",
+        siteName: "Àlex Aguilera Martínez",
         images: [
             {
-                url: '/og-image.png', // You'll need to create this image
+                url: '/og-image.png',
                 width: 1200,
                 height: 630,
                 alt: 'Àlex Aguilera Martínez - Full Stack Developer',
             }
         ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: "Àlex Aguilera Martínez | Full Stack Developer",
-        description: "Full Stack Developer specializing in modern web technologies. Explore my portfolio featuring Next.js, React, TypeScript, and AI-powered projects.",
-        images: ['/og-image.png'], // Same image as Open Graph
-        creator: '@yourtwitterhandle', // Replace with your Twitter handle
     },
     robots: {
         index: true,
@@ -75,12 +68,20 @@ export const metadata: Metadata = {
         },
     },
     icons: {
-        icon: '/icon.png',
-        apple: '/apple-icon.png',
+        icon: [
+            { url: '/icon.png', sizes: '32x32' },
+            { url: '/icon.png', sizes: '192x192' },
+        ],
+        apple: '/icon.png',
     },
     manifest: '/manifest.json',
     verification: {
         google: 'kdKBCgzVmVS4dyILN-TNc1yyWgpmH52UtATSN0eWFRc',
+    },
+    appleWebApp: {
+        title: "Àlex Aguilera Martínez",
+        statusBarStyle: "default",
+        capable: true,
     },
 };
 
