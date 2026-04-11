@@ -142,7 +142,9 @@ export default function ChatWidget() {
                                                 const parsed = JSON.parse(msg);
                                                 return parsed.error || msg;
                                             } catch {
-                                                return error.message;
+                                                return error.message.startsWith("Error: ")
+                                                    ? error.message.slice(7)
+                                                    : error.message;
                                             }
                                         })()}
                                     </p>
