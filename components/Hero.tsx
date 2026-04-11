@@ -65,7 +65,7 @@ export default function Hero() {
                     <div className="flex flex-wrap gap-4">
                         {[
                             { name: "Spanish", flag: "https://flagcdn.com/w40/es.png" },
-                            { name: "Catalan", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Catalonia.svg/64px-Flag_of_Catalonia.svg.png" },
+                            { name: "Catalan", flag: "/cat.svg" },
                             { name: "English", flag: "https://flagcdn.com/w40/gb.png" },
                             { name: "Italian", flag: "https://flagcdn.com/w40/it.png" }
                         ].map((lang) => (
