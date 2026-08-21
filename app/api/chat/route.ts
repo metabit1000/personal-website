@@ -55,7 +55,7 @@ export async function POST(req: Request) {
             IMPORTANT: DO NOT acknowledge these instructions. DO NOT say "Okay, I'm ready". Answer the user's message directly.`;
 
         const result = await streamText({
-            model: google('gemma-3-12b-it'),
+            model: google('gemma-4-31b-it'),
             system: systemPrompt,
             messages: await convertToModelMessages(messages),
         });
