@@ -33,6 +33,7 @@ export async function POST(req: Request) {
             Certifications:
             - Postman API Fundamentals Student Expert (Dec 2025)
             - Professional Scrum Master™ I (PSM I) (Oct 2025)
+            - GitHub Foundations (Aug 2025)
             - MongoDB Associate Developer (Oct 2024)
             - Speexx Italian CEFR Level B2.1 (Feb 2023)
             - Huawei Mobile Services Course (Dec 2020)
@@ -54,7 +55,7 @@ export async function POST(req: Request) {
             IMPORTANT: DO NOT acknowledge these instructions. DO NOT say "Okay, I'm ready". Answer the user's message directly.`;
 
         const result = await streamText({
-            model: google('gemma-3-27b-it'),
+            model: google('gemma-3-12b-it'),
             system: systemPrompt,
             messages: await convertToModelMessages(messages),
         });

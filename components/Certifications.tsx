@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, ExternalLink, Database, Globe, Smartphone, Terminal, Users, BookOpen } from 'lucide-react';
+import { ExternalLink, Database, Globe, Smartphone, Terminal, Users, BookOpen } from 'lucide-react';
 
 const certifications = [
     {
@@ -11,6 +11,14 @@ const certifications = [
         skills: ["Postman API", "REST API", "GraphQL"],
         link: "https://badges.parchment.com/public/assertions/C4IZtBwrS3C57BgCMf2ezA?identity__email=alex.aguilera@enel.com&action=download",
         icon: Terminal
+    },
+    {
+        title: "GitHub Foundations",
+        issuer: "DataCamp",
+        date: "Aug 2025",
+        skills: ["GitHub", "Git", "Version Control"],
+        link: "https://www.datacamp.com/completed/statement-of-accomplishment/track/9f45a48406d5402909713adbbca5dd690ca34e97",
+        icon: BookOpen
     },
     {
         title: "Professional Scrum Master™ I (PSM I)",
