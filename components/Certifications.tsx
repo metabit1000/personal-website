@@ -5,6 +5,14 @@ import { ExternalLink, Database, Globe, Smartphone, Terminal, Users, BookOpen } 
 
 const certifications = [
     {
+        title: "AWS Certified AI Practitioner",
+        issuer: "Amazon Web Services (AWS)",
+        date: "Sep 2026 – Sep 2029",
+        skills: ["Inteligencia artificial", "Amazon Web Services (AWS)"],
+        link: "https://www.credly.com/badges/706b5a47-bc25-461c-b872-7da946b507ec/linked_in_profile",
+        icon: BookOpen
+    },
+    {
         title: "Postman API Fundamentals Student Expert",
         issuer: "Postman",
         date: "Dec 2025",
