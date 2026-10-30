@@ -5,6 +5,13 @@ import { ExternalLink, Database, Globe, Smartphone, Terminal, Users, BookOpen } 
 
 const certifications = [
     {
+        title: "AWS Certified AI Practitioner",
+        issuer: "Amazon Web Services (AWS)",
+        date: "Sep 2026 – Sep 2029",
+        skills: ["Inteligencia artificial", "Amazon Web Services (AWS)"],
+        icon: BookOpen
+    },
+    {
         title: "Postman API Fundamentals Student Expert",
         issuer: "Postman",
         date: "Dec 2025",
